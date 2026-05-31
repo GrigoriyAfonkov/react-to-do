@@ -9,7 +9,12 @@ const STORAGE_KEY = 'tasks';
 function App() {
   const [items, setItems] = useState(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
-    return saved ? JSON.parse(saved) : [...defaultItems];
+    if (!saved) return [...defaultItems];
+    try {
+      return JSON.parse(saved);
+    } catch {
+      return [...defaultItems];
+    }
   });
 
   useEffect(() => {
