@@ -1,4 +1,3 @@
-//управляет списком задач, сохраняет его в localStorage, рендерит форму и список
 import { useState, useEffect } from 'react';
 import TodoForm from './components/TodoForm';
 import TodoItem from './components/TodoItem';
